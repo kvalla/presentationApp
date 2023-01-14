@@ -17,6 +17,18 @@ export class TodoService {
     return this.data;
   }
 
+  getListByTitle(title: string): TodoItem[] {
+    let resultData = [];
+
+    if (title.length == 0 || this.data.length == 0) {
+      resultData = this.data
+    }else{
+      resultData = this.data.filter(d => d.title.toLowerCase().indexOf(title) > -1);
+    }
+
+    return resultData;
+  }
+
   addItem(item: TodoItem): void {
     item.id = this.counter + "-item";
     this.data.push(item);

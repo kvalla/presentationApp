@@ -9,28 +9,25 @@ import { TodoService } from '../services/todo.service';
 })
 export class Tab1Page {
 
-  constructor(private todoService: TodoService) {
+  constructor(private todoService: TodoService) { }
+
+  ionViewDidEnter() {
+    this.searchedTitle = undefined;
     this.data = this.todoService.getList();
     this.results = JSON.parse(JSON.stringify(this.data));
   }
 
   handleChange(event: any): void {
-    const query = event.target.value.toLowerCase();
-
-    console.log(this.data)
-
-    if (query.length == 0 || this.data.length == 0) {
-      this.results = this.todoService.getList();
-    }else{
-      this.results = this.data.filter(d => d.title.toLowerCase().indexOf(query) > -1);
-    }
+    const title = event.target.value.toLowerCase();
+    this.results = this.todoService.getListByTitle(title);
   }
 
   deleteItem(id: string): void {
     this.todoService.deleteItem(id);
-    this.results = this.todoService.getList();
+    this.results = this.todoService.getListByTitle(this.searchedTitle);
   }
 
+  searchedTitle: string;
   results: TodoItem[];
   data: TodoItem[];
 }
