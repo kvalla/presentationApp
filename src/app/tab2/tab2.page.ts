@@ -9,7 +9,11 @@ import { TodoService } from '../services/todo.service';
 })
 export class Tab2Page {
 
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService) { }
+
+  ionViewDidEnter() {
+    this.message = undefined;
+  }
 
   addItemClicked(): void {
     if (!this.title || this.title.length == 0) {
@@ -36,5 +40,5 @@ export class Tab2Page {
 
   title: string;
   description: string;
-  message: string = "";
+  message: string;
 }
