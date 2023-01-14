@@ -15,6 +15,12 @@ export class Tab2Page {
     this.message = undefined;
   }
 
+  inputChanged(): void {
+    if (this.message) {
+      this.message = undefined;
+    }
+  }
+
   addItemClicked(): void {
     if (!this.title || this.title.length == 0) {
       this.message = "Field 'Title' is required";

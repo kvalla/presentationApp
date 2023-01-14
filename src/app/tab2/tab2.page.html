@@ -17,10 +17,10 @@
 
   <ion-card class="ion-padding">
     <ion-label position="stacked">Title</ion-label>
-    <ion-input [(ngModel)]="title" [clearInput]="true" placeholder="Enter title"></ion-input>
+    <ion-input [(ngModel)]="title" (ngModelChange)="inputChanged()" [clearInput]="true" placeholder="Enter title"></ion-input>
 
     <ion-label position="stacked">Description</ion-label>
-    <ion-input [(ngModel)]="description" [clearInput]="true" placeholder="Enter description"></ion-input>
+    <ion-input [(ngModel)]="description" (ngModelChange)="inputChanged()" [clearInput]="true" placeholder="Enter description"></ion-input>
   </ion-card>
 
   <ion-button class="ion-padding" (click)="addItemClicked()">Add item</ion-button>
