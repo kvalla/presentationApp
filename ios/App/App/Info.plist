@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>PresentationApp</string>
+	<string>PresentationApp</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,6 +27,10 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location is required to enable auto detect your positon for the weather forecast.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is required to enable auto detect your positon for the weather forecast.</string>
 	<array>
 		<string>armv7</string>
 	</array>
