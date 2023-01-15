@@ -20,7 +20,7 @@ export class TodoService {
   getListByTitle(title: string): TodoItem[] {
     let resultData = [];
 
-    if (title.length == 0 || this.data.length == 0) {
+    if (!title || title.length == 0 || this.data.length == 0) {
       resultData = this.data
     }else{
       resultData = this.data.filter(d => d.title.toLowerCase().indexOf(title) > -1);
