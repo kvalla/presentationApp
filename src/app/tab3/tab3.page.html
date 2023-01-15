@@ -13,7 +13,9 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button class="ion-padding" (click)="detectGps()">Detect your position</ion-button>
+  <ion-spinner class="loader" [hidden]="!loading"></ion-spinner>
+
+  <ion-button class="button" (click)="detectGps()">Detect your position</ion-button>
 
   <ion-card class="ion-padding">
     <ion-label position="stacked">Latitude</ion-label>
@@ -22,4 +24,6 @@
     <ion-label position="stacked">Longitude</ion-label>
     <ion-input type="number" [(ngModel)]="longitude" [clearInput]="true" placeholder="Enter longitude"></ion-input>
   </ion-card>
+
+  <ion-button class="button" (click)="getForecast()">Get forecast</ion-button>
 </ion-content>
