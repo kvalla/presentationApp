@@ -15,7 +15,7 @@
 
   <ion-spinner class="loader" [hidden]="!loading"></ion-spinner>
 
-  <ion-button class="button" (click)="detectGps()">Detect your position</ion-button>
+  <ion-button class="button" (click)="detectGps()" [disabled]="loading">Detect your position</ion-button>
 
   <ion-card class="ion-padding">
     <ion-label position="stacked">Latitude</ion-label>
@@ -25,5 +25,15 @@
     <ion-input type="number" [(ngModel)]="longitude" [clearInput]="true" placeholder="Enter longitude"></ion-input>
   </ion-card>
 
-  <ion-button class="button" (click)="getForecast()">Get forecast</ion-button>
+  <ion-button class="button" (click)="getForecast()" [disabled]="loading">Get today forecast</ion-button>
+
+  <div>
+    <ion-list [inset]="true">
+      <ion-item *ngFor="let item of hourlyForecast">
+        <ion-label class="ion-no-padding forecast-item">
+          {{ item.hour }}h: <ion-icon name="thermometer"></ion-icon> {{ item.temperature }} <ion-icon name="rainy"></ion-icon> {{ item.rain }} <ion-icon name="aperture"></ion-icon> {{ item.windspeed }}
+        </ion-label>
+        </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

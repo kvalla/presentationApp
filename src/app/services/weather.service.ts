@@ -9,6 +9,6 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getForecast(latitude: number, longitude: number) {
-    return this.http.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&timezone=auto&hourly=temperature_2m&daily=precipitation_sum`);
+    return this.http.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain,windspeed_10m&timezone=auto`);
   }
 }
