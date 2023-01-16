@@ -13,8 +13,6 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-spinner class="loader" [hidden]="!loading"></ion-spinner>
-
   <ion-button class="button" (click)="detectGps()" [disabled]="loading">Detect your position</ion-button>
 
   <ion-card class="ion-padding">
@@ -36,4 +34,6 @@
         </ion-item>
     </ion-list>
   </div>
+  
+  <ion-spinner class="loader" [hidden]="!loading"></ion-spinner>
 </ion-content>

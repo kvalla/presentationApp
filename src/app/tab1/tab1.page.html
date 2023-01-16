@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-searchbar [(ngModel)]="searchedTitle" show-cancel-button="focus" placeholder="Enter searched title" (ionChange)="handleChange($event)"></ion-searchbar>
+  <ion-searchbar type="text" [(ngModel)]="searchedTitle" show-cancel-button="focus" placeholder="Enter searched title" (ionChange)="handleChange($event)"></ion-searchbar>
 
   <ion-list>
     <ion-card *ngFor="let result of results">
