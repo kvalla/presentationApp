@@ -27,10 +27,6 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Location is required to enable auto detect your positon for the weather forecast.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location is required to enable auto detect your positon for the weather forecast.</string>
 	<array>
 		<string>armv7</string>
 	</array>
@@ -49,5 +45,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is required to enable auto detect your positon for the weather forecast.</string>
 </dict>
 </plist>
